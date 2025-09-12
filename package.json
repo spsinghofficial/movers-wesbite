@@ -1,0 +1,27 @@
+{
+  "name": "elite-movers-website",
+  "version": "1.0.0",
+  "description": "Professional moving services website for Elite Movers",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'Static site - no build required'",
+    "start": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "moving",
+    "movers",
+    "relocation",
+    "professional-services",
+    "website"
+  ],
+  "author": "Elite Movers",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elite-movers/website.git"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

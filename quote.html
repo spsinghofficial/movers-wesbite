@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Free Moving Quote - Elite Movers | No Hidden Fees</title>
+    <meta name="description" content="Get a free, detailed moving quote from Elite Movers. No hidden fees, transparent pricing, and personalized estimates for local and long-distance moves.">
+    <meta name="keywords" content="free moving quote, moving estimate, moving cost, local moving quote, long distance moving quote">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>Elite Movers</h2>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                </ul>
+                <div class="nav-phone">
+                    <a href="tel:5551234567" class="phone-btn">(555) 123-4567</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Free Moving Quote</h1>
+                <p class="hero-subtitle">Get your personalized moving estimate in just 3 simple steps. Experience transparent pricing, no hidden fees, and our guaranteed 24-hour response time.</p>
+                <div class="hero-buttons">
+                    <a href="#quote-form-section" class="btn btn-primary">Start My Quote</a>
+                    <a href="tel:5551234567" class="btn btn-secondary">Call (555) 123-4567</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-benefits">
+            <div class="container">
+                <h2>Why Get a Quote from Elite Movers?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🆓</div>
+                        <h3>100% Free</h3>
+                        <p>No cost, no obligation quotes</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚡</div>
+                        <h3>Quick Response</h3>
+                        <p>Get your quote within 24 hours</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📊</div>
+                        <h3>Detailed Breakdown</h3>
+                        <p>Transparent pricing with full details</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🔒</div>
+                        <h3>No Hidden Fees</h3>
+                        <p>What you see is what you pay</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-form-section">
+            <div class="container">
+                <div class="form-container">
+                    <form id="quoteForm" class="quote-form">
+                        <div class="form-step active" id="step1">
+                            <h2>Step 1: Personal Information</h2>
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name *</label>
+                                    <input type="text" id="fullName" name="fullName" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="emailAddress">Email Address *</label>
+                                    <input type="email" id="emailAddress" name="emailAddress" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phoneNumber">Phone Number *</label>
+                                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="preferredContactMethod">Preferred Contact Method</label>
+                                    <select id="preferredContactMethod" name="preferredContactMethod">
+                                        <option value="phone">Phone</option>
+                                        <option value="email">Email</option>
+                                        <option value="text">Text Message</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="button" class="btn btn-primary next-step" onclick="nextStep()">Next Step</button>
+                        </div>
+
+                        <div class="form-step" id="step2">
+                            <h2>Step 2: Move Details</h2>
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="movingDate">Moving Date *</label>
+                                    <input type="date" id="movingDate" name="movingDate" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="flexibleDate">Flexible on Date?</label>
+                                    <select id="flexibleDate" name="flexibleDate">
+                                        <option value="no">No, specific date required</option>
+                                        <option value="yes">Yes, I can be flexible</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="movingFromAddress">Moving From Address *</label>
+                                    <input type="text" id="movingFromAddress" name="movingFromAddress" placeholder="Full address including city, state, zip" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="movingToAddress">Moving To Address *</label>
+                                    <input type="text" id="movingToAddress" name="movingToAddress" placeholder="Full address including city, state, zip" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="propertyType">Property Type</label>
+                                    <select id="propertyType" name="propertyType" required>
+                                        <option value="">Select Property Type</option>
+                                        <option value="house">House</option>
+                                        <option value="apartment">Apartment</option>
+                                        <option value="condo">Condo/Townhouse</option>
+                                        <option value="office">Office</option>
+                                        <option value="storage">Storage Unit</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="homeSize">Home/Office Size</label>
+                                    <select id="homeSize" name="homeSize" required>
+                                        <option value="">Select Size</option>
+                                        <option value="studio">Studio</option>
+                                        <option value="1br">1 Bedroom</option>
+                                        <option value="2br">2 Bedroom</option>
+                                        <option value="3br">3 Bedroom</option>
+                                        <option value="4br">4 Bedroom</option>
+                                        <option value="5br">5+ Bedroom</option>
+                                        <option value="small-office">Small Office</option>
+                                        <option value="large-office">Large Office</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="floorsElevator">Floors/Elevator Access</label>
+                                    <input type="text" id="floorsElevator" name="floorsElevator" placeholder="e.g., 2nd floor, elevator available">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="estimatedWeight">Estimated Weight/Items</label>
+                                    <input type="text" id="estimatedWeight" name="estimatedWeight" placeholder="e.g., 5,000 lbs, 3 bedrooms worth">
+                                </div>
+                            </div>
+                            
+                            <div class="step-buttons">
+                                <button type="button" class="btn btn-secondary prev-step" onclick="prevStep()">Previous</button>
+                                <button type="button" class="btn btn-primary next-step" onclick="nextStep()">Next Step</button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" id="step3">
+                            <h2>Step 3: Services Needed</h2>
+                            
+                            <div class="services-grid">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="packingService" name="services" value="packing">
+                                    <label for="packingService">
+                                        <strong>Full Packing Service</strong>
+                                        <span>Professional packing of all items</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="unpackingService" name="services" value="unpacking">
+                                    <label for="unpackingService">
+                                        <strong>Unpacking Service</strong>
+                                        <span>Unpacking and placement at destination</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="storageNeeded" name="services" value="storage">
+                                    <label for="storageNeeded">
+                                        <strong>Storage Needed</strong>
+                                        <span>Short or long-term storage solutions</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="pianoSpecial" name="services" value="piano">
+                                    <label for="pianoSpecial">
+                                        <strong>Piano/Special Items</strong>
+                                        <span>Pianos, artwork, antiques, safes</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="assemblyService" name="services" value="assembly">
+                                    <label for="assemblyService">
+                                        <strong>Disassembly/Assembly</strong>
+                                        <span>Furniture breakdown and reassembly</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="suppliesOnly" name="services" value="supplies">
+                                    <label for="suppliesOnly">
+                                        <strong>Packing Supplies Only</strong>
+                                        <span>Boxes, tape, bubble wrap delivery</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group mt-2">
+                                <label for="additionalInfo">Additional Information</label>
+                                <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Please describe any special requirements, concerns, or additional details about your move..."></textarea>
+                            </div>
+                            
+                            <div class="step-buttons">
+                                <button type="button" class="btn btn-secondary prev-step" onclick="prevStep()">Previous</button>
+                                <button type="submit" class="btn btn-cta">Get My Free Quote</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div id="quoteSuccess" class="quote-success" style="display: none;">
+                        <div class="success-content">
+                            <div class="success-icon">🎉</div>
+                            <h2>Quote Request Submitted!</h2>
+                            <p>Thank you for choosing Elite Movers! We've received your quote request and will provide you with a detailed estimate within 24 hours.</p>
+                            
+                            <div class="next-steps">
+                                <h3>What happens next?</h3>
+                                <ul>
+                                    <li>✅ We'll review your moving requirements</li>
+                                    <li>📞 Our team will contact you within 24 hours</li>
+                                    <li>📋 We'll provide a detailed, personalized quote</li>
+                                    <li>🏠 Schedule an in-home estimate if needed</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="contact-info-box">
+                                <h4>Need immediate assistance?</h4>
+                                <a href="tel:5551234567" class="btn btn-primary">Call (555) 123-4567</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-steps">
+                        <div class="progress-step active" id="progress1">1</div>
+                        <div class="progress-step" id="progress2">2</div>
+                        <div class="progress-step" id="progress3">3</div>
+                    </div>
+                    <div class="progress-labels">
+                        <span>Personal Info</span>
+                        <span>Move Details</span>
+                        <span>Services</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-guarantee">
+            <div class="container">
+                <h2>Our Quote Guarantee</h2>
+                <div class="guarantee-grid">
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">⏱️</div>
+                        <h3>24-Hour Response</h3>
+                        <p>We guarantee to provide your quote within 24 hours of submission.</p>
+                    </div>
+                    
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">🎯</div>
+                        <h3>Accurate Estimates</h3>
+                        <p>Our quotes are based on detailed analysis and years of experience.</p>
+                    </div>
+                    
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">🔒</div>
+                        <h3>Price Protection</h3>
+                        <p>Binding quotes available to lock in your price.</p>
+                    </div>
+                    
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">📞</div>
+                        <h3>Personal Consultation</h3>
+                        <p>Speak directly with our moving experts about your needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Our Customers Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <p>"The quote process was so easy and transparent. No surprises on moving day - everything was exactly as quoted."</p>
+                        <div class="testimonial-author">- Jennifer K., Denver</div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p>"Elite Movers provided the most detailed and honest quote. Their pricing was fair and there were no hidden fees."</p>
+                        <div class="testimonial-author">- Robert M., Phoenix</div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p>"Got my quote the same day I submitted the form. The team was professional and the estimate was spot-on."</p>
+                        <div class="testimonial-author">- Lisa T., Seattle</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Elite Movers</h3>
+                    <p>Professional moving services you can trust since 2009.</p>
+                    <div class="footer-social">
+                        <span>Follow Us: </span>
+                        <span>📘 📷 🐦</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#local">Local Moving</a></li>
+                        <li><a href="services.html#long-distance">Long-Distance</a></li>
+                        <li><a href="services.html#commercial">Commercial Moving</a></li>
+                        <li><a href="services.html#packing">Packing Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:5551234567">(555) 123-4567</a></li>
+                        <li><a href="mailto:info@elitemovers.com">info@elitemovers.com</a></li>
+                        <li>123 Main St, Your City, State 12345</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Business Hours</h4>
+                    <ul>
+                        <li>Monday-Friday: 8:00 AM - 8:00 PM</li>
+                        <li>Saturday: 9:00 AM - 6:00 PM</li>
+                        <li>Sunday: 10:00 AM - 4:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Elite Movers. All rights reserved.</p>
+                <div class="footer-badges">
+                    <span class="badge">BBB A+ Rated</span>
+                    <span class="badge">Licensed</span>
+                    <span class="badge">Insured</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <style>
+        .hero {
+            background: linear-gradient(var(--gradient-overlay)), url('./images/hero-quote.jpg');
+        }
+        
+        .quote-benefits {
+            padding: 80px 1rem;
+            background: var(--background-alt);
+        }
+        
+        .quote-benefits h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            color: var(--text-dark);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .benefit-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-item h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        
+        .quote-form-section {
+            padding: 80px 1rem;
+            position: relative;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .form-step {
+            display: none;
+        }
+        
+        .form-step.active {
+            display: block;
+        }
+        
+        .form-step h2 {
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            text-align: center;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .checkbox-group {
+            background: var(--background-alt);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .checkbox-group:hover {
+            border-color: var(--primary);
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 0.75rem;
+            transform: scale(1.2);
+        }
+        
+        .checkbox-group label {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .checkbox-group label strong {
+            color: var(--text-dark);
+        }
+        
+        .checkbox-group label span {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .step-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .form-progress {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+        }
+        
+        .progress-bar {
+            background: #e5e7eb;
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        
+        .progress-fill {
+            background: var(--primary);
+            height: 100%;
+            border-radius: 3px;
+            width: 33.33%;
+            transition: width 0.3s ease;
+        }
+        
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .progress-step {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #e5e7eb;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .progress-step.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .progress-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+        
+        .quote-success {
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        
+        .success-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+        
+        .quote-success h2 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .quote-success p {
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .next-steps {
+            background: var(--background-alt);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .next-steps h3 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            text-align: center;
+        }
+        
+        .next-steps ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .next-steps li {
+            padding: 0.5rem 0;
+            color: var(--text-dark);
+        }
+        
+        .contact-info-box {
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        
+        .contact-info-box h4 {
+            margin-bottom: 1rem;
+        }
+        
+        .quote-guarantee {
+            padding: 80px 1rem;
+            background: var(--background-alt);
+        }
+        
+        .quote-guarantee h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            color: var(--text-dark);
+        }
+        
+        .guarantee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .guarantee-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .guarantee-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .guarantee-item h3 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        @media (max-width: 767px) {
+            .form-progress {
+                width: 250px;
+            }
+            
+            .step-buttons {
+                flex-direction: column;
+            }
+            
+            .progress-labels {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</body>
+</html>
