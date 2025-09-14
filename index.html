@@ -3,28 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Moving Services You Can Trust | Elite Movers</title>
+    <title>Professional Moving Services You Can Trust | Speedy Box Movers</title>
     <meta name="description" content="Trusted moving company with 15+ years experience. Licensed, insured, and professional. Get your free quote today for local and long-distance moves.">
     <meta name="keywords" content="movers, moving company, relocation, local movers, long distance moving, professional movers">
     <link rel="stylesheet" href="styles.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <h2>Elite Movers</h2>
+                    <h2>Speedy Box Movers</h2>
                 </div>
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
+                <div class="theme-switcher">
+                    <button class="theme-btn" id="themeSwitcher">
+                        <span class="theme-icon">🎨</span>
+                        <span class="theme-text">Themes</span>
+                    </button>
+                    <div class="theme-dropdown" id="themeDropdown">
+                        <div class="theme-option" data-theme="default">
+                            <div class="theme-preview">
+                                <span style="background: #2563eb;"></span>
+                                <span style="background: #10b981;"></span>
+                                <span style="background: #f59e0b;"></span>
+                            </div>
+                            <span>Classic Blue</span>
+                        </div>
+                        <div class="theme-option" data-theme="energetic">
+                            <div class="theme-preview">
+                                <span style="background: #E85D00;"></span>
+                                <span style="background: #2D5A3D;"></span>
+                                <span style="background: #F4A623;"></span>
+                            </div>
+                            <span>Energetic Movement</span>
+                        </div>
+                        <div class="theme-option" data-theme="modern">
+                            <div class="theme-preview">
+                                <span style="background: #00A8A8;"></span>
+                                <span style="background: #D4621C;"></span>
+                                <span style="background: #2C3E50;"></span>
+                            </div>
+                            <span>Modern Transit</span>
+                        </div>
+                        <div class="theme-option" data-theme="premium">
+                            <div class="theme-preview">
+                                <span style="background: #6B46C1;"></span>
+                                <span style="background: #FF6B35;"></span>
+                                <span style="background: #6B7280;"></span>
+                            </div>
+                            <span>Premium Speed</span>
+                        </div>
+                        <div class="theme-option" data-theme="natural">
+                            <div class="theme-preview">
+                                <span style="background: #059669;"></span>
+                                <span style="background: #F97316;"></span>
+                                <span style="background: #FEF7ED;"></span>
+                            </div>
+                            <span>Natural Movement</span>
+                        </div>
+                        <div class="theme-option" data-theme="sunset">
+                            <div class="theme-preview">
+                                <span style="background: #FF6B6B;"></span>
+                                <span style="background: #4ECDC4;"></span>
+                                <span style="background: #FFE66D;"></span>
+                            </div>
+                            <span>Sunset Vibes</span>
+                        </div>
+                        <div class="theme-option" data-theme="ocean">
+                            <div class="theme-preview">
+                                <span style="background: #1B365D;"></span>
+                                <span style="background: #7FEFBD;"></span>
+                                <span style="background: #FFB347;"></span>
+                            </div>
+                            <span>Ocean Breeze</span>
+                        </div>
+                        <div class="theme-option" data-theme="earth">
+                            <div class="theme-preview">
+                                <span style="background: #D4845C;"></span>
+                                <span style="background: #8FAF8D;"></span>
+                                <span style="background: #F5E6A3;"></span>
+                            </div>
+                            <span>Warm Earth</span>
+                        </div>
+                        <div class="theme-option" data-theme="electric">
+                            <div class="theme-preview">
+                                <span style="background: #00F5FF;"></span>
+                                <span style="background: #FF073A;"></span>
+                                <span style="background: #FFE600;"></span>
+                            </div>
+                            <span>Electric Night</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="nav-phone">
-                    <a href="tel:5551234567" class="phone-btn">(555) 123-4567</a>
+                    <a href="tel:4375668712" class="phone-btn">(437) 566-8712</a>
                 </div>
                 <div class="hamburger" id="hamburger">
                     <span class="bar"></span>
@@ -36,13 +116,13 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section id="home" class="hero">
             <div class="hero-content">
                 <h1>Professional Moving Excellence</h1>
-                <p class="hero-subtitle">Transform your moving experience with Elite Movers. We deliver exceptional service, unmatched reliability, and complete peace of mind for your most important transitions.</p>
+                <p class="hero-subtitle">Transform your moving experience with Speedy Box Movers. We deliver exceptional service, unmatched reliability, and complete peace of mind for your most important transitions.</p>
                 <div class="hero-buttons">
-                    <a href="quote.html" class="btn btn-primary">Get Free Quote</a>
-                    <a href="tel:5551234567" class="btn btn-secondary">Call (555) 123-4567</a>
+                    <a href="#contact" class="btn btn-primary">Get Free Quote</a>
+                    <a href="tel:4375668712" class="btn btn-secondary">Call (437) 566-8712</a>
                 </div>
                 <div class="hero-stats">
                     <div class="stat-item">
@@ -61,73 +141,173 @@
             </div>
         </section>
 
-        <section class="features">
-            <div class="container">
-                <h2>Why Choose Elite Movers?</h2>
-                <div class="features-grid">
-                    <div class="feature">
-                        <div class="feature-icon">✓</div>
-                        <h3>Licensed & Insured</h3>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">✓</div>
-                        <h3>24/7 Customer Support</h3>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">✓</div>
-                        <h3>Transparent Pricing</h3>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">✓</div>
-                        <h3>Professional Team</h3>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">✓</div>
-                        <h3>On-Time Guarantee</h3>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">✓</div>
-                        <h3>Full-Service Packing</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Modern Divider -->
+        <div class="section-divider-wave"></div>
 
-        <section class="services">
+        <section id="services" class="services">
             <div class="container">
                 <h2>Our Moving Services</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">🏠</div>
-                        <h3>Local Moving</h3>
-                        <p>Swift and careful moving within the city and surrounding areas</p>
-                        <a href="services.html#local" class="service-link">Learn More</a>
+                <div class="services-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-slides">
+                            <div class="service-slide active">
+                                <div class="service-image">
+                                    <div class="service-image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                        <span>🏠</span>
+                                    </div>
+                                </div>
+                                <h3>Residential Moving</h3>
+                                <p>Complete home moving solutions for any size residence with careful handling of your belongings</p>
+                            </div>
+                            <div class="service-slide">
+                                <div class="service-image">
+                                    <div class="service-image-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                                        <span>🏢</span>
+                                    </div>
+                                </div>
+                                <h3>Commercial Moving</h3>
+                                <p>Professional business relocation with minimal downtime and expert handling of office equipment</p>
+                            </div>
+                            <div class="service-slide">
+                                <div class="service-image">
+                                    <div class="service-image-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                        <span>📦</span>
+                                    </div>
+                                </div>
+                                <h3>Packing Services</h3>
+                                <p>Professional packing with premium materials and expert techniques to protect your valuables</p>
+                            </div>
+                            <div class="service-slide">
+                                <div class="service-image">
+                                    <div class="service-image-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                                        <span>🔧</span>
+                                    </div>
+                                </div>
+                                <h3>Furniture Assembly</h3>
+                                <p>Expert furniture disassembly and reassembly services to ensure safe transport and setup</p>
+                            </div>
+                            <div class="service-slide">
+                                <div class="service-image">
+                                    <div class="service-image-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                                        <span>🏪</span>
+                                    </div>
+                                </div>
+                                <h3>Storage Solutions</h3>
+                                <p>Secure short-term and long-term storage options in climate-controlled facilities</p>
+                            </div>
+                            <div class="service-slide">
+                                <div class="service-image">
+                                    <div class="service-image-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                                        <span>📋</span>
+                                    </div>
+                                </div>
+                                <h3>Moving Supplies</h3>
+                                <p>High-quality boxes, tape, bubble wrap, and specialized packing materials delivered to your door</p>
+                            </div>
+                            <div class="service-slide">
+                                <div class="service-image">
+                                    <div class="service-image-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                                        <span>💪</span>
+                                    </div>
+                                </div>
+                                <h3>Loading Assistance</h3>
+                                <p>Professional loading services when you need help getting items into your moving truck</p>
+                            </div>
+                            <div class="service-slide">
+                                <div class="service-image">
+                                    <div class="service-image-placeholder" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+                                        <span>🚚</span>
+                                    </div>
+                                </div>
+                                <h3>Unloading Assistance</h3>
+                                <p>Expert unloading services to safely move your belongings from truck to your new location</p>
+                            </div>
+                            <div class="service-slide">
+                                <div class="service-image">
+                                    <div class="service-image-placeholder" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);">
+                                        <span>🛡️</span>
+                                    </div>
+                                </div>
+                                <h3>Furniture Wrapping</h3>
+                                <p>Professional furniture wrapping and protection to prevent damage during transport</p>
+                            </div>
+                            <div class="service-slide">
+                                <div class="service-image">
+                                    <div class="service-image-placeholder" style="background: linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%);">
+                                        <span>🎨</span>
+                                    </div>
+                                </div>
+                                <h3>Fragile Handling</h3>
+                                <p>Specialized handling for artwork, antiques, electronics, and other delicate items</p>
+                            </div>
+                            <div class="service-slide">
+                                <div class="service-image">
+                                    <div class="service-image-placeholder" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);">
+                                        <span>🏠</span>
+                                    </div>
+                                </div>
+                                <h3>Local Moving</h3>
+                                <p>Swift and careful moving within the city and surrounding areas with same-day service</p>
+                            </div>
+                            <div class="service-slide">
+                                <div class="service-image">
+                                    <div class="service-image-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #a8e6cf 100%);">
+                                        <span>🚛</span>
+                                    </div>
+                                </div>
+                                <h3>Long Distance Moving</h3>
+                                <p>Coast-to-coast relocation with GPS tracking, insurance, and professional coordination</p>
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev-btn">‹</button>
+                        <button class="carousel-btn next-btn">›</button>
                     </div>
-                    <div class="service-card">
-                        <div class="service-icon">🚛</div>
-                        <h3>Long-Distance Moving</h3>
-                        <p>Coast-to-coast relocation with tracking and insurance</p>
-                        <a href="services.html#long-distance" class="service-link">Learn More</a>
+                    <div class="carousel-dots"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modern Divider -->
+        <div class="section-divider-gradient"></div>
+
+        <section class="features">
+            <div class="container">
+                <h2>Why Choose Speedy Box Movers?</h2>
+                <div class="features-one-liner">
+                    <div class="feature-inline">
+                        <span class="feature-icon-inline">🛡️</span>
+                        <span>Licensed & Insured</span>
                     </div>
-                    <div class="service-card">
-                        <div class="service-icon">🏢</div>
-                        <h3>Commercial Moving</h3>
-                        <p>Office relocation with minimal business disruption</p>
-                        <a href="services.html#commercial" class="service-link">Learn More</a>
+                    <div class="feature-inline">
+                        <span class="feature-icon-inline">📞</span>
+                        <span>24/7 Support</span>
                     </div>
-                    <div class="service-card">
-                        <div class="service-icon">📦</div>
-                        <h3>Packing Services</h3>
-                        <p>Professional packing with premium materials</p>
-                        <a href="services.html#packing" class="service-link">Learn More</a>
+                    <div class="feature-inline">
+                        <span class="feature-icon-inline">💰</span>
+                        <span>Transparent Pricing</span>
+                    </div>
+                    <div class="feature-inline">
+                        <span class="feature-icon-inline">👥</span>
+                        <span>Professional Team</span>
+                    </div>
+                    <div class="feature-inline">
+                        <span class="feature-icon-inline">⏰</span>
+                        <span>On-Time Guarantee</span>
+                    </div>
+                    <div class="feature-inline">
+                        <span class="feature-icon-inline">📦</span>
+                        <span>Full-Service Packing</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="stats">
+        <!-- Modern Divider -->
+        <div class="section-divider-dots"></div>
+
+        <section id="about" class="stats">
             <div class="container">
-                <h2>Why Families Trust Elite Movers</h2>
+                <h2>Why Families Trust Speedy Box Movers</h2>
                 <div class="stats-grid">
                     <div class="stat">
                         <div class="stat-number">15+</div>
@@ -153,31 +333,272 @@
             </div>
         </section>
 
+        <!-- Modern Divider -->
+        <div class="section-divider-wave"></div>
+
+        <section class="service-areas">
+            <div class="container">
+                <h2>Areas We Serve</h2>
+                <p class="service-areas-subtitle">Speedy Box Movers is proud to provide high-quality, professional moving services including local moving, long-distance, and packing to all of Toronto, ON, and all surrounding areas.</p>
+
+                <div class="areas-grid">
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Toronto</span>
+                    </div>
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Mississauga</span>
+                    </div>
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Brampton</span>
+                    </div>
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Markham</span>
+                    </div>
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Vaughan</span>
+                    </div>
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Richmond Hill</span>
+                    </div>
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Oakville</span>
+                    </div>
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Burlington</span>
+                    </div>
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Ajax</span>
+                    </div>
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Pickering</span>
+                    </div>
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Whitby</span>
+                    </div>
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Oshawa</span>
+                    </div>
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Milton</span>
+                    </div>
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Cambridge</span>
+                    </div>
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Kitchener</span>
+                    </div>
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Waterloo</span>
+                    </div>
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Guelph</span>
+                    </div>
+                    <div class="area-item">
+                        <div class="area-icon">📍</div>
+                        <span>Hamilton</span>
+                    </div>
+                </div>
+
+                <div class="service-areas-cta">
+                    <p>Don't see your area listed? <a href="#contact">Contact us</a> - we serve many more locations throughout Ontario!</p>
+                </div>
+            </div>
+        </section>
+
         <section class="testimonials">
             <div class="container">
                 <h2>What Our Customers Say</h2>
                 <div class="testimonials-grid">
                     <div class="testimonial">
-                        <p>"The team was professional, efficient, and handled our belongings with care. Highly recommend!"</p>
-                        <div class="testimonial-author">- Sarah M., Denver</div>
+                        <p>"Speedy Box Movers was incredibly professional and efficient. They handled our belongings with care and made our move stress-free!"</p>
+                        <div class="testimonial-author">- Sarah M., Toronto</div>
                     </div>
                     <div class="testimonial">
-                        <p>"Best moving experience we've had. On time, on budget, and zero damage."</p>
-                        <div class="testimonial-author">- John D., Austin</div>
+                        <p>"Best moving experience we've had. On time, on budget, and zero damage. Will definitely use them again!"</p>
+                        <div class="testimonial-author">- John D., Mississauga</div>
                     </div>
                     <div class="testimonial">
-                        <p>"They made our cross-country move seamless. Excellent communication throughout."</p>
-                        <div class="testimonial-author">- Maria L., Portland</div>
+                        <p>"They made our long-distance move seamless. Excellent communication throughout the entire process."</p>
+                        <div class="testimonial-author">- Maria L., Vancouver</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="cta">
+        <section id="contact" class="contact">
             <div class="container">
-                <h2>Ready to Make Your Move?</h2>
-                <p>Get Your Free Quote in 60 Seconds</p>
-                <a href="quote.html" class="btn btn-cta">Get Free Quote Now</a>
+                <h2>Contact Speedy Box Movers</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Get Your Free Quote Today</h3>
+                        <div class="contact-item">
+                            <strong>📞 Phone:</strong>
+                            <a href="tel:4375668712">(437) 566-8712</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>📧 Email:</strong>
+                            <a href="mailto:info@speedyboxmovers.com">info@speedyboxmovers.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>🕒 Business Hours:</strong>
+                            <p>Monday-Friday: 8:00 AM - 8:00 PM<br>
+                            Saturday: 9:00 AM - 6:00 PM<br>
+                            Sunday: 10:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="quote-form">
+                        <h3>Request a Quote</h3>
+                        <form id="quoteForm">
+                            <input type="text" name="user_name" placeholder="Your Name" required>
+                            <input type="tel" name="user_phone" placeholder="Phone Number" required>
+                            <input type="email" name="user_email" placeholder="Email Address" required>
+                            <input type="text" name="moving_from" placeholder="Moving From (Address)" required>
+                            <input type="text" name="moving_to" placeholder="Moving To (Address)" required>
+                            <input type="date" name="moving_date" placeholder="Moving Date" required>
+                            <textarea name="message" placeholder="Additional Details" rows="4"></textarea>
+                            <button type="submit" class="btn btn-primary">Get Free Quote</button>
+                        </form>
+                        <div id="form-status" class="form-status"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modern Divider -->
+        <div class="section-divider-gradient"></div>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <p class="faq-subtitle">Get answers to the most common questions about our moving services</p>
+
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How much does it cost to hire Speedy Box Movers?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our pricing depends on several factors including the size of your move, distance, time of year, and additional services. We offer competitive hourly rates starting at $120/hour for local moves with 2 movers and a truck. For accurate pricing, we provide free in-home estimates where we assess your specific needs and provide a detailed quote with no hidden fees.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How far in advance should I book my move?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We recommend booking your move at least 2-4 weeks in advance, especially during peak moving season (May-September) and at month-end. However, we understand that sometimes moves need to happen quickly, and we'll do our best to accommodate last-minute requests based on availability.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you provide packing materials and services?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We offer comprehensive packing services and high-quality packing materials. Our services include full-service packing, partial packing, and packing supplies delivery. We use premium materials including sturdy boxes, bubble wrap, packing paper, and specialized containers for fragile items like artwork and electronics.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Are you licensed and insured?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! Speedy Box Movers is fully licensed and insured. We carry comprehensive liability insurance and cargo protection to ensure your belongings are covered throughout the entire moving process. We're also members of professional moving associations and maintain all required certifications.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What areas do you serve?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We proudly serve the Greater Toronto Area and surrounding regions including Toronto, Mississauga, Brampton, Markham, Vaughan, Richmond Hill, Oakville, Burlington, and many other communities throughout Ontario. We also provide long-distance moving services across Canada.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How do you protect my furniture and belongings?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We take extra care to protect your belongings using professional moving blankets, shrink wrap, and padding. Our team is trained in proper lifting and loading techniques. We also offer furniture disassembly and reassembly services, and we have specialized equipment for handling pianos, artwork, and other valuable items.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can you move specialty items like pianos or artwork?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we specialize in moving delicate and valuable items including pianos, artwork, antiques, electronics, and other specialty pieces. Our team has the expertise and specialized equipment needed to ensure these items are moved safely and securely.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you offer storage solutions?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we provide both short-term and long-term storage solutions in secure, climate-controlled facilities. This is perfect for situations where you need temporary storage between moves, downsizing, or when your new home isn't ready yet.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What happens if there's bad weather on moving day?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We monitor weather conditions closely and will contact you if severe weather might affect your move. While we move in most weather conditions with proper protection for your belongings, safety is our priority. If necessary, we'll work with you to reschedule to the next available date at no additional charge.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How do I prepare for moving day?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We'll provide you with a comprehensive moving checklist, but key steps include: decluttering and packing personal items, confirming parking arrangements, backing up computer files, defrosting refrigerators, and keeping important documents with you. We'll also discuss any special requirements during your pre-move consultation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-cta">
+                    <h3>Still have questions?</h3>
+                    <p>Can't find the answer you're looking for? Our friendly team is here to help!</p>
+                    <div class="faq-buttons">
+                        <a href="#contact" class="btn btn-primary">Get Your Quote</a>
+                        <a href="tel:4375668712" class="btn btn-secondary">Call (437) 566-8712</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -186,7 +607,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Elite Movers</h3>
+                    <h3>Speedy Box Movers</h3>
                     <p>Professional moving services you can trust since 2009.</p>
                     <div class="footer-social">
                         <span>Follow Us: </span>
@@ -196,18 +617,17 @@
                 <div class="footer-section">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="services.html#local">Local Moving</a></li>
-                        <li><a href="services.html#long-distance">Long-Distance</a></li>
-                        <li><a href="services.html#commercial">Commercial Moving</a></li>
-                        <li><a href="services.html#packing">Packing Services</a></li>
+                        <li><a href="#services">Residential Moving</a></li>
+                        <li><a href="#services">Commercial Moving</a></li>
+                        <li><a href="#services">Packing Services</a></li>
+                        <li><a href="#services">Storage Solutions</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="tel:5551234567">(555) 123-4567</a></li>
-                        <li><a href="mailto:info@elitemovers.com">info@elitemovers.com</a></li>
-                        <li>123 Main St, Your City, State 12345</li>
+                        <li><a href="tel:4375668712">(437) 566-8712</a></li>
+                        <li><a href="mailto:info@speedyboxmovers.com">info@speedyboxmovers.com</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -220,7 +640,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Elite Movers. All rights reserved.</p>
+                <p>&copy; 2024 Speedy Box Movers. All rights reserved.</p>
                 <div class="footer-badges">
                     <span class="badge">BBB A+ Rated</span>
                     <span class="badge">Licensed</span>
@@ -230,20 +650,21 @@
         </div>
     </footer>
 
+    <!-- Fixed Mobile CTA -->
+    <div class="mobile-cta-fixed">
+        <a href="#contact" class="mobile-cta-btn">
+            <span class="cta-icon">📞</span>
+            <span class="cta-text">Get Free Quote</span>
+        </a>
+    </div>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "MovingCompany",
-      "name": "Elite Movers",
-      "url": "https://elitemovers.com",
-      "telephone": "+1-555-123-4567",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Main St",
-        "addressLocality": "Your City",
-        "addressRegion": "State",
-        "postalCode": "12345"
-      },
+      "name": "Speedy Box Movers",
+      "url": "https://speedyboxmovers.com",
+      "telephone": "+1-437-566-8712",
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.8",

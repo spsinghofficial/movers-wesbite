@@ -1,3 +1,8 @@
+// EmailJS Configuration
+(function() {
+    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual EmailJS public key
+})();
+
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger');
@@ -25,6 +30,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const question = item.querySelector('.faq-question');
         if (question) {
             question.addEventListener('click', () => {
+                // Close other FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+
+                // Toggle current item
                 item.classList.toggle('active');
             });
         }
@@ -84,7 +97,181 @@ document.addEventListener('DOMContentLoaded', function() {
     dateInputs.forEach(input => {
         input.setAttribute('min', today);
     });
+
+    // Initialize Services Carousel
+    initializeCarousel();
+
+    // Initialize EmailJS Form Handler
+    initializeEmailForm();
+
+    // Initialize Scroll Animations
+    initializeScrollAnimations();
+
+    // Initialize Theme Switcher
+    initializeThemeSwitcher();
 });
+
+// Services Carousel Functionality
+function initializeCarousel() {
+    const carousel = document.querySelector('.carousel-slides');
+    const slides = document.querySelectorAll('.service-slide');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const dotsContainer = document.querySelector('.carousel-dots');
+
+    if (!carousel || !slides.length) return;
+
+    let currentSlide = 0;
+
+    // Create dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('carousel-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.carousel-dot');
+
+    function updateCarousel() {
+        const offset = -currentSlide * 100;
+        carousel.style.transform = `translateX(${offset}%)`;
+
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+
+    function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        updateCarousel();
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+        updateCarousel();
+    }
+
+    // Event listeners
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+    // Auto-rotate carousel
+    setInterval(nextSlide, 5000);
+
+    // Touch/swipe support for mobile
+    let startX = 0;
+    let isScrolling = false;
+
+    carousel.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isScrolling = false;
+    });
+
+    carousel.addEventListener('touchmove', (e) => {
+        if (!startX) return;
+
+        const currentX = e.touches[0].clientX;
+        const diff = startX - currentX;
+
+        if (Math.abs(diff) > 10) {
+            isScrolling = true;
+            e.preventDefault();
+        }
+    });
+
+    carousel.addEventListener('touchend', (e) => {
+        if (!isScrolling || !startX) return;
+
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+
+        startX = 0;
+        isScrolling = false;
+    });
+}
+
+// EmailJS Form Handler
+function initializeEmailForm() {
+    const form = document.getElementById('quoteForm');
+    const statusDiv = document.getElementById('form-status');
+
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Show loading state
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        // Clear previous status
+        statusDiv.innerHTML = '';
+
+        // Prepare template parameters
+        const templateParams = {
+            user_name: form.user_name.value,
+            user_email: form.user_email.value,
+            user_phone: form.user_phone.value,
+            moving_from: form.moving_from.value,
+            moving_to: form.moving_to.value,
+            moving_date: form.moving_date.value,
+            message: form.message.value,
+            to_email: 'alamrandhawa16@gmail.com'
+        };
+
+        // Send email using EmailJS
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                showFormStatus('success', 'Thank you! Your quote request has been sent successfully. We\'ll contact you within 24 hours.');
+                form.reset();
+            })
+            .catch(function(error) {
+                console.log('FAILED...', error);
+                showFormStatus('error', 'Sorry, there was an error sending your request. Please try again or call us directly at (437) 566-8712.');
+            })
+            .finally(function() {
+                // Reset button state
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+    });
+}
+
+function showFormStatus(type, message) {
+    const statusDiv = document.getElementById('form-status');
+    statusDiv.className = `form-status ${type}`;
+    statusDiv.innerHTML = `
+        <div class="status-icon">${type === 'success' ? '✅' : '❌'}</div>
+        <div class="status-message">${message}</div>
+    `;
+    statusDiv.style.display = 'block';
+
+    // Auto-hide success message after 10 seconds
+    if (type === 'success') {
+        setTimeout(() => {
+            statusDiv.style.display = 'none';
+        }, 10000);
+    }
+}
 
 // Phone number formatting function
 function formatPhoneNumber(e) {
@@ -416,9 +603,125 @@ function debounce(func, wait) {
     };
 }
 
+// Scroll Animations
+function initializeScrollAnimations() {
+    if ('IntersectionObserver' in window) {
+        const animationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    animationObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        // Observe sections for animation
+        const sections = document.querySelectorAll('section, .feature, .service-card, .faq-item');
+        sections.forEach(section => {
+            section.classList.add('animate-on-scroll');
+            animationObserver.observe(section);
+        });
+    }
+}
+
+// Theme Switcher Functionality
+function initializeThemeSwitcher() {
+    const themeSwitcher = document.getElementById('themeSwitcher');
+    const themeDropdown = document.getElementById('themeDropdown');
+    const themeOptions = document.querySelectorAll('.theme-option');
+
+    if (!themeSwitcher || !themeDropdown) return;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('selectedTheme') || 'ocean';
+    applyTheme(savedTheme);
+    updateActiveTheme(savedTheme);
+
+    // Toggle dropdown
+    themeSwitcher.addEventListener('click', (e) => {
+        e.stopPropagation();
+        themeDropdown.classList.toggle('show');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', () => {
+        themeDropdown.classList.remove('show');
+    });
+
+    // Theme selection
+    themeOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const theme = option.dataset.theme;
+            applyTheme(theme);
+            updateActiveTheme(theme);
+            localStorage.setItem('selectedTheme', theme);
+            themeDropdown.classList.remove('show');
+        });
+    });
+}
+
+function applyTheme(theme) {
+    const html = document.documentElement;
+
+    if (theme === 'default') {
+        html.removeAttribute('data-theme');
+    } else {
+        html.setAttribute('data-theme', theme);
+    }
+}
+
+function updateActiveTheme(activeTheme) {
+    const themeOptions = document.querySelectorAll('.theme-option');
+    themeOptions.forEach(option => {
+        option.classList.remove('active');
+        if (option.dataset.theme === activeTheme) {
+            option.classList.add('active');
+        }
+    });
+}
+
+// Animation Observer for Stats Section
+function initStatsAnimation() {
+    const stats = document.querySelectorAll('.stat');
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('animate');
+                }, index * 150); // Staggered animation
+            }
+        });
+    }, {
+        threshold: 0.5,
+        rootMargin: '-50px'
+    });
+
+    stats.forEach(stat => {
+        statsObserver.observe(stat);
+    });
+}
+
+// Service Cards Animation Delays
+function initServiceCardsAnimation() {
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach((card, index) => {
+        card.style.setProperty('--move-delay', `${index * 0.5}s`);
+    });
+}
+
 // Debounced scroll handler for performance
 const debouncedScrollHandler = debounce(() => {
     // Any scroll-based functionality can go here
 }, 100);
 
 window.addEventListener('scroll', debouncedScrollHandler);
+
+// Initialize animations when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initStatsAnimation();
+    initServiceCardsAnimation();
+});
