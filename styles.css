@@ -799,6 +799,24 @@ footer {
   }
 }
 
+/* Mobile Styles */
+@media (max-width: 767px) {
+  /* Avoid overlap with fixed navbar and fix iOS background issues */
+  .hero {
+    padding-top: 100px; /* push content below 70px fixed navbar */
+    background-attachment: scroll; /* iOS Safari: show background image */
+    background-position: center 30%; /* show more headroom */
+  }
+
+  .hero-content h1 {
+    font-size: 2.4rem; /* prevent heading clipping */
+  }
+
+  .hero-content {
+    padding: 1.5rem 1rem;
+  }
+}
+
 /* Desktop Styles */
 @media (min-width: 1024px) {
   .hero-content {
